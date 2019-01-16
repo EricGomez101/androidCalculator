@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
+import android.view.View;
+
 
 public class MainActivity extends AppCompatActivity {
     private EditText result;
@@ -41,6 +43,25 @@ public class MainActivity extends AppCompatActivity {
         Button buttonMultiply = (Button) findViewById(R.id.buttonMultiply);
         Button buttonSubtract = (Button) findViewById(R.id.buttonSubtract);
         Button buttonAdd = (Button) findViewById(R.id.buttonAdd);
+
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button b = (Button) v;
+                newNumber.append(b.getText().toString());
+            }
+        };
+        button0.setOnClickListener(listener);
+        button1.setOnClickListener(listener);
+        button2.setOnClickListener(listener);
+        button3.setOnClickListener(listener);
+        button4.setOnClickListener(listener);
+        button5.setOnClickListener(listener);
+        button6.setOnClickListener(listener);
+        button7.setOnClickListener(listener);
+        button8.setOnClickListener(listener);
+        button9.setOnClickListener(listener);
+        buttonPeriod.setOnClickListener(listener);
     }
 
 }
